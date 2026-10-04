@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+:root {
+  color-scheme: light;
+  --ink: #172e4a;
+  --muted: #52677f;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: linear-gradient(155deg, #edf5ff, #f0fbf7 40%, #fff 80%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #d8e8ff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+h1, p {
+  margin: 0;
+}
+
+.page {
+  width: min(100%, 580px);
+  margin-inline: auto;
+  padding: 64px 28px 28px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 8px 16px;
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.intro {
+  text-align: center;
+}
+
+.portrait-cluster {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 24px auto 42px;
+  isolation: isolate;
+}
+
+.distribution-network {
+  position: absolute;
+  z-index: -1;
+  width: 176px;
+  height: 176px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.network-connections {
+  stroke: #a9ccee;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.network-nodes {
+  fill: #e6efff;
+  stroke: #5c91e6;
+  stroke-width: 1.3;
+}
+
+.network-nodes circle:nth-child(even) {
+  fill: #ddf8ef;
+  stroke: #25a995;
+}
+
+.network-node-centres {
+  fill: #168d83;
+}
+
+.packet-blue {
+  fill: #2563eb;
+  filter: drop-shadow(0 0 2px #2563eb55);
+}
+
+.packet-teal {
+  fill: #0d9488;
+  filter: drop-shadow(0 0 2px #0d948855);
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #dce6ef;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 24px #2563eb14;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 57%;
+  transform: scale(1.65);
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+
+.role {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #285aa3;
+}
+
+.summary {
+  max-width: 440px;
+  margin: 18px auto 30px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.summary a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.summary a:hover {
+  color: #1748b5;
+}
+
+.link-list {
+  display: grid;
+  gap: 12px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 20px;
+  border: 1px solid #d9e5f2;
+  border-radius: 12px;
+  background: #ffffffd9;
+  box-shadow: 0 2px 8px #172e4a03;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+
+.link-card:hover {
+  border-color: #87b2ef;
+  background: #f6faff;
+  transform: translateY(-2px);
+}
+
+.link-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #356ccc;
+  background: #eef4ff;
+  border-radius: 8px;
+}
+
+.link-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.icon-linkedin {
+  font-size: 21px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+
+.link-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.link-copy strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.link-copy > span {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.link-arrow {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #356ccc;
+}
+
+.footer {
+  padding-top: 30px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 440px) {
+  .page {
+    padding: 32px 22px 24px;
+  }
+
+  .portrait-cluster {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 38px;
+  }
+
+  .distribution-network {
+    width: 160px;
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .link-card {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .network-packets {
+    display: none;
+  }
+
+  .link-card {
+    transition: none;
+  }
+
+  .link-card:hover {
+    transform: none;
+  }
+}
